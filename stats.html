@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light navbar navbar-dark bg-dark">
+      <div class="container-fluid d-flex justify-content-between">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/images/Logo Amazing Events.png" alt="logo" width="100" height="24" class="d-inline-block align-text-top">
+        </a>
+       
+        <div class="me-3 collapse navbar-collapse flex-grow-0" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./upcomingEvents.html">Upcoming Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pastEvents.html">Past Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./stats.html">Stats</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="app">
+    <img src="./assets/images/celebrando.jpg" alt="celebrando" class="img-fluid w-100 imgtop">
+    <h2 class="text-warning z-1 translate-middle pagina">Stats</h2>
+<!-- Tabla 1 -->
+    <div class="d-flex justify-content-center width:100%">
+      <div class="table-responsive mt-4 col-12 col-lg-8 col-xl-8 col-xxl-8">
+        <table class="table table-dark table-hover col-8 col-lg-8 col-xl-8 col-xxl-8">
+          <thead class="col-lg-8">
+            <tr><th class="text-center" colspan="3">Events Statistics</th></tr>
+            <tr>
+              <th scope="col">Events with the highest percentage of attendance</th>
+              <th scope="col">Events with the lowest percentage of attendance</th>
+              <th scope="col">Events with larger capacity</th>
+            </tr>
+          </thead>
+          <tbody class="col-lg-8" id="tbodyTabla1">
+
+            <tr>
+              <th scope="row">{{highestAttendanceEvent.name}} {{highestAttendanceEvent.assistance}} %</th>
+              <td>{{lowestAttendaceEvent.name}} {{lowestAttendaceEvent.assistance}}  % </td>
+              <td>{{largestCapacityEvent.name}} {{largestCapacityEvent.capacity}}</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+<!-- Tabla 2 -->
+<div class="d-flex justify-content-center width:100%">
+  <div class="table-responsive mt-4 col-12 col-lg-8 col-xl-8 col-xxl-8">
+    <table class="table table-dark table-hover col-8 col-lg-8 col-xl-8 col-xxl-8">
+      <thead class="col-lg-8">
+        <tr><th class="text-center" colspan="3">Upcoming events statistics by category</th></tr>
+        <tr>
+          <th scope="col">Categories</th>
+          <th scope="col">Revenues estimate</th>
+          <th scope="col">Percentage of attendance</th>
+        </tr>
+      </thead>
+      <tbody class="col-lg-8" id="tbodyTabla2">
+        <tr v-for="ingresos of arrayResultados">
+          <td scope="row">{{ingresos.category}}</th>
+          <td>{{ingresos.totalRevenue}}</td>
+          <td>{{ingresos.averageAssistance}}</td> 
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Tabla 3 -->
+    <div class="d-flex justify-content-center width:100%">
+      <div class="table-responsive mt-4 col-12 col-lg-8 col-xl-8 col-xxl-8">
+        <table class="table table-dark table-hover col-8 col-lg-8 col-xl-8 col-xxl-8">
+          <thead class="col-lg-8">
+            <tr><th class="text-center" colspan="3">Past Events statistic by category</th></tr>
+            <tr v-for="ingresos of arrayResultadoPast">
+                <td scope="row">{{ingresos.category}}</th>
+                <td>{{ingresos.totalRevenue}}</td>
+                <td>{{ingresos.averageAssistance}}</td> 
+            </tr>
+          </thead>
+          <tbody class="col-lg-8" id="tbodyTabla3">
+            <tr>
+              <th scope="row"></th>
+              <td></td>
+              <td></td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    
+  </main>
+
+  <footer class=" bg-dark flex-grow-0 d-flex">
+    <div class="d-flex col-6 justify-content-between">
+      <img class="icon" src="./assets/images/instagram.png" alt="instragram">
+      <img class="icon" src="./assets/images/facebook.png" alt="facebook">
+      <img class="icon" src="./assets/images/whatsapp.png" alt="whatsapp">
+    </div>
+    <h2 class="text-white text-center col-6 mt-2">Cohort 47</h2>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./scripts/stats.js"></script>
+</body>
+</html>
