@@ -75,7 +75,7 @@
               <p class="card-text">{{evento.description}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <p class="card-text mt-2">{{evento.price}}</p>
-                <a href="./details.html?id=${evento._id}" class="btn btn-secondary">Go somewhere</a>
+                <a :href="`./details.html?id=`+evento._id" class="btn btn-secondary">Go somewhere</a>
               </div>
             </div>
           </article>

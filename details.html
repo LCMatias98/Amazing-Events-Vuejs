@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+</head>
+<body>
+  <header>
+        <nav class="navbar navbar-expand-lg navbar-light navbar navbar-dark bg-dark">
+          <div class="container-fluid d-flex justify-content-between">
+              <a class="navbar-brand" href="#">
+                  <img src="./assets/images/Logo Amazing Events.png" alt="logo" width="100" height="24" class="d-inline-block align-text-top">
+                  <!-- Bootstrap -->
+              </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="me-3 collapse navbar-collapse flex-grow-0" id="navbarText">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="./home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./upcomingEvents.html">Upcoming Events</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./pastEvents.html">Past Events</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./stats.html">Stats</a>
+                </li>
+              </ul>
+<!--                 <span class="navbar-text">
+                Navbar text with an inline element
+              </span> -->
+            </div>
+          </div>
+        </nav>
+
+  </header>
+
+  <main class="d-flex align-items-center justify-content-around" id="app">
+        <div class="card mb-3 mt-4 col-12 col-md-12" id="card" style="max-width: 540px; border: none; box-shadow:26px 26px 53px #636161,-26px -26px 53px #ffffff;">
+            <div class="row g-0">
+                <div class="col-md-6 col-lg-6">
+                <img v-bind:src="event.image" class="img-fluid rounded-start card-img-details" v-bind:alt="event.name" style="height: 100%;">
+                </div>
+                <div class="col-md-6 col-lg-6">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">{{event.name}}</h5>
+                    <p class="card-text mb-4">{{event.description}}</p>
+                    <div class="d-flex justify-content-between">
+                    <div class="">
+                        <p class="card-text"><small class="text-body-secondary">Capacity: {{event.capacity}}</small></p>
+                        <p v-if="event.assistance">Assistance: {{event.assistance}}</p>
+                        <p v-else-if="event.estimate">Estimate: {{event.estimate}}</p>
+                        <p class="card-text"><small class="text-body-secondary">Place: {{event.place}}</small></p>
+                    </div>
+                    <div class="card-text">
+                        <p class="card-text"><small class="text-body-secondary">Date: {{event.date}}</small></p>
+                        <p class="card-text"><small class="text-body-secondary">Price: {{event.price}}</small></p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+  </main>
+
+  <footer class=" bg-dark flex-grow-0 d-flex">
+    <div class="d-flex col-6 justify-content-between">
+      <img class="icon" src="./assets/images/instagram.png" alt="instragram">
+      <img class="icon" src="./assets/images/facebook.png" alt="facebook">
+      <img class="icon" src="./assets/images/whatsapp.png" alt="whatsapp">
+    </div>
+    <h2 class="text-white text-center col-6 mt-2">Cohort 47</h2>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./scripts/details.js"></script>
+
+</body>
+</html>

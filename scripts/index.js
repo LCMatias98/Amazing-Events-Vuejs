@@ -19,7 +19,7 @@ const { createApp } = Vue
         input: "",
         checkedNames:[],
         eventosFiltrados: [],
-        arrayCategoria:[]
+        arrayCategorias:[]
       }
 
     },
@@ -37,13 +37,12 @@ const { createApp } = Vue
         .catch(error => console.log(error))
     },
 
-    // Metodos que se ejecutan una vez
     methods:{
       categorias: function(){
         let arrayCategoria = this.arrayEventos.map((evento) => evento.category)
         let setCategorias = new Set(arrayCategoria)
         this.arrayCategorias = Array.from(setCategorias)
-        /* console.log(this.arrayCategorias) */  
+        console.log(this.arrayCategorias)
 
       }
     },
